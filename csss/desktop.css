@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #EEF9BF;
+
+    font-family: 'Roboto', sans-serif;
+}
+.title {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+h1 {
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 47px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+
+    color: #75B79E;
+}
+.parrots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+}
+.parrot {
+    width: 117px;
+    height: 146px;
+
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parrot img {
+    width: 100px;
+    height: 100px;
+}
