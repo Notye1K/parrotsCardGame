@@ -5,4 +5,8 @@
 
         text-align: center;
     }
+    .parrots{
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
 }

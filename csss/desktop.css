@@ -43,6 +43,33 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
+}
+.face {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+.back-face {
+    transform: rotateY(180deg);
+}
+.parrot:hover .back-face {
+    transform: rotateY(0deg);
+    background-color: royalblue;
+}
+.parrot:hover .front-face {
+    transform: rotateY(-180deg);
+    background-color: red;
 }
 .parrot img {
     width: 100px;

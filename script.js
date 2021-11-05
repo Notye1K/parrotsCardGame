@@ -18,8 +18,14 @@ function numberCards() {
     let inner = document.querySelector(".parrots")
     inner.innerHTML = ""
     while (c !== cards) {
-        inner.innerHTML = inner.innerHTML + `        <div class="parrot">
-            <${cardsSorted[c]}>
+        inner.innerHTML = inner.innerHTML + `        
+        <div class="parrot">
+            <div class ="front-face face">
+                <img src="images/front.png" alt="front">
+            </div>
+            <div class ="back-face face">       
+                <${cardsSorted[c]}>
+            </div>
         </div>
         `
         c++
@@ -32,6 +38,4 @@ function comparador() {
 
 
 let images = ['img src="images/bobrossparrot.gif" alt="bobross"','img src="images/bobrossparrot.gif" alt="bobross"','img src="images/explodyparrot.gif" alt="explody"','img src="images/explodyparrot.gif" alt="explody"','img src="images/fiestaparrot.gif" alt="fiesta"','img src="images/fiestaparrot.gif" alt="fiesta"','img src="images/metalparrot.gif" alt="metal"','img src="images/metalparrot.gif" alt="metal"','img src="images/revertitparrot.gif" alt="reverti"','img src="images/revertitparrot.gif" alt="reverti"','img src="images/tripletsparrot.gif" alt="triplets"','img src="images/tripletsparrot.gif" alt="triplets"','img src="images/unicornparrot.gif" alt="unicorn.gif"','img src="images/unicornparrot.gif" alt="unicorn.gif"']
-//images = images.sort(comparador)
 numberCards()
-console.log(cardsSorted)
