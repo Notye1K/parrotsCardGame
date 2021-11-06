@@ -35,20 +35,20 @@ function comparador() {
 	return Math.random() - 0.5; 
 }
 function clic(x) {
-    flipCard(x)
+    x.classList.add('flip')
     if(start == 0){
         idTimer = setInterval(timer,1000)
         start = 1
     }
     if (x.classList.contains('matched') == false) {
-        times++
         let end = false
         i++
         if (i == 2){
             i=0
-            if (firstInner == x.lastElementChild.innerHTML) {
+            if (firstInner == x.lastElementChild.innerHTML && first.parentElement != x) {
                 first.parentElement.classList.add('matched')
                 x.classList.add('matched')
+                times += 2
                 for (let c = 0; c < QueryParrot.length; c++) {
                     if (QueryParrot[c].classList.contains('matched')){
                         end = true
@@ -64,7 +64,8 @@ function clic(x) {
                     
                 }
             }
-            else {
+            else if (x != first.parentElement) {
+                times += 2
                 setTimeout(wrong,1000,x,first)
                 
             }
@@ -79,9 +80,6 @@ function timer() {
     sec++
     document.querySelector(".timer").innerHTML = sec
 }
-function flipCard(x) {
-    x.classList.add('flip');
-  }
 function wrong (x,y) {
     y.parentElement.classList.remove('flip')
     x.classList.remove('flip')
