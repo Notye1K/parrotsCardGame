@@ -36,13 +36,13 @@ h1 {
     width: 117px;
     height: 146px;
 
-    background: #A7E9AF;
+    /* background: #A7E9AF;
     border: 1px solid #99CEA8;
     border-radius: 5px;
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 
     position: relative;
 }
@@ -63,15 +63,18 @@ h1 {
 .back-face {
     transform: rotateY(180deg);
 }
-.parrot:hover .back-face {
+.parrot .back-face {
     transform: rotateY(0deg);
-    background-color: royalblue;
+    /* background-color: royalblue; */
 }
-.parrot:hover .front-face {
+.parrot .front-face {
     transform: rotateY(-180deg);
-    background-color: red;
+    /* background-color: red; */
 }
 .parrot img {
     width: 100px;
     height: 100px;
+}
+.vanish {
+    display: none;
 }
