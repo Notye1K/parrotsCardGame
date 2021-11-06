@@ -63,11 +63,11 @@ h1 {
 .back-face {
     transform: rotateY(180deg);
 }
-.parrot .back-face {
+.parrot.flip .back-face {
     transform: rotateY(0deg);
     /* background-color: royalblue; */
 }
-.parrot .front-face {
+.parrot.flip .front-face {
     transform: rotateY(-180deg);
     /* background-color: red; */
 }

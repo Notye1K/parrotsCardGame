@@ -1,6 +1,5 @@
 function numberCards() {
     let cards = 0
-    checkiandj:
     while (cards < 4 || cards > 14) {
         cards = parseInt(prompt("Coloque o número de cartas que quer jogar (entre 4 e 14, número par)"))
         let resto = cards % 2
@@ -36,6 +35,7 @@ function comparador() {
 	return Math.random() - 0.5; 
 }
 function clic(x) {
+    flipCard(x)
     if(start == 0){
         idTimer = setInterval(timer,1000)
         start = 1
@@ -43,7 +43,6 @@ function clic(x) {
     if (x.classList.contains('matched') == false) {
         times++
         let end = false
-        const QueryParrot = document.querySelectorAll('.parrot')
         i++
         if (i == 2){
             i=0
@@ -60,17 +59,15 @@ function clic(x) {
                     }
                 }
                 if (end) {
-                    alert(`Você ganhou em ${sec} segundos e com ${times} jogadas!`) 
+                    setTimeout(message,601) 
                     clearInterval(idTimer)
-                    let ask = prompt('quer jogar de novo? s/n').toLowerCase()
-                    if (ask[0] == 's'){
-                        location.reload()
-                    }
+                    
                 }
             }
-            // else {
-            //     alert ("errou")
-            // }
+            else {
+                setTimeout(wrong,1000,x,first)
+                
+            }
         }
         firstInner = x.lastElementChild.innerHTML
         first = x.lastElementChild
@@ -82,6 +79,21 @@ function timer() {
     sec++
     document.querySelector(".timer").innerHTML = sec
 }
+function flipCard(x) {
+    x.classList.add('flip');
+  }
+function wrong (x,y) {
+    y.parentElement.classList.remove('flip')
+    x.classList.remove('flip')
+}
+function message() {
+    alert(`Você ganhou em ${sec} segundos e com ${times} jogadas!`)
+    let ask = prompt('quer jogar de novo? s/n').toLowerCase()
+    if (ask[0] == 's'){
+        location.reload()
+    }
+}
+  
 
 
 let images = ['img src="images/bobrossparrot.gif" alt="bobross"','img src="images/bobrossparrot.gif" alt="bobross"','img src="images/explodyparrot.gif" alt="explody"','img src="images/explodyparrot.gif" alt="explody"','img src="images/fiestaparrot.gif" alt="fiesta"','img src="images/fiestaparrot.gif" alt="fiesta"','img src="images/metalparrot.gif" alt="metal"','img src="images/metalparrot.gif" alt="metal"','img src="images/revertitparrot.gif" alt="reverti"','img src="images/revertitparrot.gif" alt="reverti"','img src="images/tripletsparrot.gif" alt="triplets"','img src="images/tripletsparrot.gif" alt="triplets"','img src="images/unicornparrot.gif" alt="unicorn.gif"','img src="images/unicornparrot.gif" alt="unicorn.gif"']
@@ -93,3 +105,4 @@ let times = 0
 let sec = 0
 let start = 0
 let idTimer
+const QueryParrot = document.querySelectorAll('.parrot')
