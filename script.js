@@ -36,6 +36,10 @@ function comparador() {
 	return Math.random() - 0.5; 
 }
 function clic(x) {
+    if(start == 0){
+        idTimer = setInterval(timer,1000)
+        start = 1
+    }
     if (x.classList.contains('matched') == false) {
         times++
         let end = false
@@ -44,7 +48,6 @@ function clic(x) {
         if (i == 2){
             i=0
             if (firstInner == x.lastElementChild.innerHTML) {
-                alert('acertou')
                 first.parentElement.classList.add('matched')
                 x.classList.add('matched')
                 for (let c = 0; c < QueryParrot.length; c++) {
@@ -57,12 +60,17 @@ function clic(x) {
                     }
                 }
                 if (end) {
-                    alert(`Você ganhou em ${times} jogadas!`)                
+                    alert(`Você ganhou em ${sec} segundos e com ${times} jogadas!`) 
+                    clearInterval(idTimer)
+                    let ask = prompt('quer jogar de novo? s/n').toLowerCase()
+                    if (ask[0] == 's'){
+                        location.reload()
+                    }
                 }
             }
-            else {
-                alert('errou')
-            }
+            // else {
+            //     alert ("errou")
+            // }
         }
         firstInner = x.lastElementChild.innerHTML
         first = x.lastElementChild
@@ -70,7 +78,10 @@ function clic(x) {
         //console.log(x.lastElementChild)
     }
 }
-
+function timer() {
+    sec++
+    document.querySelector(".timer").innerHTML = sec
+}
 
 
 let images = ['img src="images/bobrossparrot.gif" alt="bobross"','img src="images/bobrossparrot.gif" alt="bobross"','img src="images/explodyparrot.gif" alt="explody"','img src="images/explodyparrot.gif" alt="explody"','img src="images/fiestaparrot.gif" alt="fiesta"','img src="images/fiestaparrot.gif" alt="fiesta"','img src="images/metalparrot.gif" alt="metal"','img src="images/metalparrot.gif" alt="metal"','img src="images/revertitparrot.gif" alt="reverti"','img src="images/revertitparrot.gif" alt="reverti"','img src="images/tripletsparrot.gif" alt="triplets"','img src="images/tripletsparrot.gif" alt="triplets"','img src="images/unicornparrot.gif" alt="unicorn.gif"','img src="images/unicornparrot.gif" alt="unicorn.gif"']
@@ -79,3 +90,6 @@ let i = 0
 let firstInner
 let first
 let times = 0
+let sec = 0
+let start = 0
+let idTimer

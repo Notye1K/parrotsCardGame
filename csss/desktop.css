@@ -75,6 +75,8 @@ h1 {
     width: 100px;
     height: 100px;
 }
-.vanish {
-    display: none;
+.timer {
+    position: fixed;
+    right: 10px;
+    top: 10px;
 }
