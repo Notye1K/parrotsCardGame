@@ -2,7 +2,7 @@
 
 A memory game where the objective is select a pair of the same gif
 
-![parrot](https://user-images.githubusercontent.com/71580986/149685035-1868e27b-e11c-4b55-926d-1743bfd31a1e.png)
+![parrot](https://user-images.githubusercontent.com/71580986/154872682-00967869-ba7b-4d4f-8c00-bad6f70d2301.gif)
 
 Try it out now at <https://notye1k.github.io/parrotsCardGame/>
 
